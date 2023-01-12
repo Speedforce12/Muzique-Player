@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .headIcon {
+        @apply hover:scale-110 duration-200 text-white ease-out cursor-pointer
+    }
+
+
+}
