@@ -6,13 +6,14 @@ import Loader from './Loader';
 
 const Layout = ({ children }) => {
   const { status } = useSession()
+  const router = useRouter();
   if (status === 'loading') return <Loader />
   
-  const router = useRouter()
+  
     return (
       <div className='relative flex bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black'>
         {router.pathname !== "/auth/login" && <Sidebar path={router.route} />}
-        <div className='h-screen flex-1 '>{children}</div>
+        <div className='min-h-screen flex-1 '>{children}</div>
       </div>
     );
 }

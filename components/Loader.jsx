@@ -10,6 +10,8 @@ function Loader() {
             src='https://rb.gy/y9mwtb'
             fill
             className='animate-pulse object-contain'
+            alt=""
+            priority
           />
         </span>
         <PulseLoader size={23} color='#15883e' />

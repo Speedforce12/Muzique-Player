@@ -6,7 +6,7 @@ import { HiOutlineShieldCheck} from "react-icons/hi";
 import { BiBell } from "react-icons/bi";
 
 
-const Search = () => {
+const Search = ({search, setSearch}) => {
   return (
     <div className='flex w-full flex-1 items-center justify-between p-5'>
       <div className='ml-6 flex items-center space-x-3 rounded-lg bg-white px-2 shadow-md '>
@@ -15,6 +15,8 @@ const Search = () => {
           type='text'
           className='w-full bg-transparent p-2 text-black focus:outline-none placeholder:text-gray-400 placeholder:font-semibold'
           placeholder="Search"
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
         />
       </div>
 
