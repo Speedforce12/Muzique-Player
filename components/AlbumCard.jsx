@@ -29,7 +29,7 @@ const AlbumCard = ({ track }) => {
         />
 
         <div className='absolute bottom-20 right-24 opacity-0 group-hover:opacity-100'>
-          <PlayPause />
+          <PlayPause track={ track} />
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import Search from "./Search";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useSpotify from "../lib/useSpotify";
 import Track from "./Track";
+import Player from "./Player";
 
 const MainArea = () => {
   const spotify = useSpotify();
@@ -28,34 +29,33 @@ const MainArea = () => {
         setSearchResult(
           data.body.tracks.items.map((track) => {
             return {
-              id: track.id,
+              id: track?.id,
               artist: track?.artists[0].name,
-              title: track.name,
-              uri: track.uri,
-              albumUrl: track.album.images[0].url,
-              popularity: track.popularity,
+              title: track?.name,
+              uri: track?.uri,
+              albumUrl: track?.album.images[0].url,
+              popularity: track?.popularity,
             };
           })
         );
       });
     }
-    
-      spotify.getNewReleases().then((data) => {
-        setNewReleases(
-          data.body.albums.items.map((track) => {
-            return {
-              id: track.id,
-              artist: track?.artists[0].name,
-              title: track.name,
-              uri: track.uri,
-              albumUrl: track.images[0].url,
-              popularity: track.popularity,
-            };
-          })
-        );
-      });
-  }, [spotify,search]);
 
+    spotify.getNewReleases().then((data) => {
+      setNewReleases(
+        data.body.albums.items.map((track) => {
+          return {
+            id: track.id,
+            artist: track?.artists[0].name,
+            title: track.name,
+            uri: track.uri,
+            albumUrl: track.images[0].url,
+            popularity: track.popularity,
+          };
+        })
+      );
+    });
+  }, [spotify, search]);
 
   return (
     <div className='flex flex-1 flex-col'>
@@ -106,6 +106,10 @@ const MainArea = () => {
                 ))}
           </div>
         </div>
+      </div>
+
+      <div className='fixed bottom-0 right-0 left-0 z-50'>
+        <Player />
       </div>
     </div>
   );

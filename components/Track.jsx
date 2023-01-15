@@ -55,13 +55,7 @@ const Track = ({ track }) => {
               <BsFillPlayFill className='text-2xl text-white' />
             </div>
           )}
-          {/* <div className='absolute -right-1.5 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full  border bg-[#0D0D0D] duration-200 group-hover:scale-110 hover:border-none hover:bg-[#15883e]'>
-            {track?.uri === selectedTrack?.uri && playing ? (
-              <BsFillPauseFill className='text-2xl text-white' />
-            ) : (
-              <BsFillPlayFill className='text-2xl text-white' />
-            )}
-          </div> */}
+
         </div>
       </div>
 

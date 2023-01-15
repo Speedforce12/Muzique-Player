@@ -7,5 +7,9 @@
         @apply hover:scale-110 duration-200 text-white ease-out cursor-pointer
     }
 
+    .button{
+        @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out
+    }
+
 
 }
